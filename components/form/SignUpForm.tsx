@@ -16,6 +16,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import GoogleSignInButton from "../GoogleSignInButton";
 import { useRouter } from "next/navigation";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import GitHubSignInButton from "../GitHubSignInButton";
 
 const formSchema = z
   .object({
@@ -147,8 +149,15 @@ const SignUpForm = () => {
       >
         or
       </div>
-      <GoogleSignInButton>Sign in with Google</GoogleSignInButton>
-      <p>
+      <GoogleSignInButton>
+        Sign in with Google{"\u00A0"}
+        <FaGoogle className="size-5" />
+      </GoogleSignInButton>
+      <GitHubSignInButton>
+        Sign in with Github{"\u00A0"}
+        <FaGithub className="size-5" />
+      </GitHubSignInButton>
+      <p className="text-center text-sm text-gray-600 mt-2">
         Already have an account?,&nbsp;
         <Link className="text-blue-500 hover:underline" href="/sign-in">
           sign in
